@@ -1,4 +1,7 @@
 <!-- ||<!DOCTYPE html> -->
+
+<!-- https://tu-pagina.com/?no=Aura%20Marina&in=3 -->
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -117,7 +120,7 @@
                     <h4 id="invitados"></h4>
                     <h4>Pases</h4>
                 <br><br>
-                <button>Confirmar Asistencia</button>
+                <button id="redirectButton">Confirmar Asistencia</button>
             </div>
         </div>
     </section>
@@ -152,11 +155,30 @@
 
     // Obtener los datos de la URL
     const datos = obtenerParametrosURL();
-
+    
+    const nombre = datos.nombre || 'Invitado';
+    const invitados = datos.invitados || '0'; // Sin "+" para el número de invitados
     // Mostrar los datos en el HTML
-    document.getElementById('nombre').textContent = datos.nombre || 'Invitado';
-    document.getElementById('invitados').textContent = datos.invitados || '0';
+    document.getElementById('nombre').textContent = nombre;
+    document.getElementById('invitados').textContent = invitados;
     // const invitadosConSigno = datos.invitados ? `+${datos.invitados}` : '0';
     // document.getElementById('invitados').textContent = invitadosConSigno;
+
+
+    const urlBase = 'https://docs.google.com/forms/d/e/1FAIpQLSclMQcdg4bDqwknb6VsrLAWiijoI8rSzAEvLaQgJPs7AP1hmQ/formResponse';
+    const urlParams = new URLSearchParams({
+      'usp': 'pp_url',
+      'entry.18154426': nombre,
+      'entry.1373878156': invitados
+    });
+
+    const urlFinal = `${urlBase}?${urlParams.toString()}`;
+
+    // Manejar el clic del botón para redirigir
+    document.getElementById('redirectButton').addEventListener('click', function() {
+    //   window.location.href = urlFinal;
+      window.open(urlFinal, '_blank'); // Abrir en una nueva ventana o pestaña
+    });
+
   </script>
 </html>
