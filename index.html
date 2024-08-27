@@ -1,0 +1,162 @@
+<!-- ||<!DOCTYPE html> -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Casamos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .content.columns {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            max-width: 300px;
+        }
+
+        .details img {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .dress-code {
+            background-color: #eaeaea;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Nos Casamos
+    </header>
+
+    <section id="nos-casamos">
+        <h2>Nos Casamos</h2>
+        <div class="content">
+            <p>Sábado, 26 de octubre 2024</p>
+            <img src="ruta-de-tu-imagen.jpg" alt="Foto de los novios" style="max-width: 600px; width: 100%; height: auto;">
+        </div>
+    </section>
+
+    <section id="detalles" class="details">
+        <h2>Detalles</h2>
+        <div class="content columns">
+            <div class="column">
+                <h3>Fecha y Hora</h3>
+                <p>Sábado, 26 de octubre 2024</p>
+                <p>17:00 horas</p>
+            </div>
+            <div class="column">
+                <h3>Lugar</h3>
+                <p>Dirección: Diagonal 12, 25A-70, Quetzaltenango</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d340.24558665787794!2d-91.5318121!3d14.8278586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e97efe827a995%3A0xdcdc779479397c90!2sRFH9%2B47G%2C%20Diagonal%2012%2025A-70%2C%20Quetzaltenango!5e1!3m2!1ses-419!2sgt!4v1724639723035!5m2!1ses-419!2sgt" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="column">
+                <h2 id="nombre"></h3>
+                    <h3>Confirmar Asistencia</h3>
+                    <p>Número de invitados:</p>
+                    <!-- <input type="number" placeholder="0" min="0" max="10" id="invitados"> -->
+                    <h4 id="invitados"></h4>
+                    <h4>Pases</h4>
+                <br><br>
+                <button>Confirmar Asistencia</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="gracias">
+        <h2>Gracias</h2>
+        <div class="content">
+            <p>Gracias a todos por ser parte de nuestras vidas y acompañarnos en este viaje tan importante. Apreciamos su apoyo y amor.</p>
+        </div>
+    </section>
+
+    <section id="vestimenta" class="dress-code">
+        <h2>Vestimenta</h2>
+        <div class="content">
+            <p>El código de vestimenta para el evento es formal. Queremos que todos se sientan cómodos y elegantes para esta ocasión especial.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2024 Aaron & Celeste. Todos los derechos reservados.
+    </footer>
+
+</body>
+  <script>
+    // Función para obtener los parámetros de la URL
+    function obtenerParametrosURL() {
+      const parametros = new URLSearchParams(window.location.search);
+      const nombre = parametros.get('no');
+      const invitados = parametros.get('in');
+      return { nombre, invitados };
+    }
+
+    // Obtener los datos de la URL
+    const datos = obtenerParametrosURL();
+
+    // Mostrar los datos en el HTML
+    document.getElementById('nombre').textContent = datos.nombre || 'Invitado';
+    document.getElementById('invitados').textContent = datos.invitados || '0';
+    // const invitadosConSigno = datos.invitados ? `+${datos.invitados}` : '0';
+    // document.getElementById('invitados').textContent = invitadosConSigno;
+  </script>
+</html>
