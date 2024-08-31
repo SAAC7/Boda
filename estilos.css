@@ -1,0 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Fredericka+the+Great&family=Xanh+Mono:ital@0;1&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 20px;
+}
+section{
+    height: 100vh;
+}
+.vh-25{
+    height: 25vh;
+}
+.vh-50{
+    height: 50vh;
+}
+.vh-75{
+    height: 75vh;
+}
+.fuente-size-auto{
+    font-size: calc(7vw + 5vh);
+    /* font-size: 20vw;  */
+}
+/* Abril Fatface  */
+.abril-fatface-regular {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .xanh-mono-regular {
+    font-family: "Xanh Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .xanh-mono-regular-italic {
+    font-family: "Xanh Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+  }
+  .fredericka-the-great-regular {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+           
+  
