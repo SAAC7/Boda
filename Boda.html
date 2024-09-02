@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Casamos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+<body class="cinzel-decorative-regular">
+    <section id="nos-casamos" class="container-fluid d-block align-items-center w-100 my-sm-2" >
+        <div class="w-100 border-top border-bottom border-2 border-dark py-3">
+            <div class="row g-0 text-center">
+                <div class="col border-top border-bottom border-end border-2 border-dark xanh-mono-regular h3">
+                    Brithany & Saúl
+                </div>
+                <div class="col border-top border-bottom border-end border-2 border-dark xanh-mono-regular h3">
+                    Noticia de ultima hora
+                </div>
+                <div class="col border-top border-bottom border-2 border-dark xanh-mono-regular h3">
+                    Sábado, 26 de octubre 2024
+                </div>
+            </div>
+        </div>
+        <div class="bebas-neue-regular text-center vh-25 fuente-size-auto">
+        Nos Casamos
+        </div>
+        <div class="border-top border-bottom border-2 border-dark row text-center py-2">
+            <div class="border-top border-bottom border-end border-2 border-dark h2">
+                <p>Sábado, 26 de octubre 2024</p>
+            </div>
+            
+        </div>
+        <h2 class="abril-fatface-regular">Brithany & Saúl</h2>
+    </section>
+
+    <section id="detalles" class="details">
+        <h2>Detalles</h2>
+        <div class="content columns">
+            <div class="column">
+                <h3>Fecha y Hora</h3>
+                <p>Sábado, 26 de octubre 2024</p>
+                <p>17:00 horas</p>
+                <iframe title="Timer" id="online-alarm-kur-iframe"
+                    src="https://embed-countdown.onlinealarmkur.com/es/#2024-10-26T17:00:00@America%2FGuatemala"
+                    width="100%" height="100" style="display: block; margin: 0px auto; border: 0px;"></iframe>
+            </div>
+            <div class="column">
+                <h3>Lugar</h3>
+                <p>Dirección: Diagonal 12, 25A-70, Quetzaltenango</p>
+                <iframe title="maps"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d340.24558665787794!2d-91.5318121!3d14.8278586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e97efe827a995%3A0xdcdc779479397c90!2sRFH9%2B47G%2C%20Diagonal%2012%2025A-70%2C%20Quetzaltenango!5e1!3m2!1ses-419!2sgt!4v1724639723035!5m2!1ses-419!2sgt"
+                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="column">
+                <h2 id="nombre">
+                    </h3>
+                    <h3>Confirmar Asistencia</h3>
+                    <p>Número de invitados:</p>
+                    <!-- <input type="number" placeholder="0" min="0" max="10" id="invitados"> -->
+                    <h4 id="invitados"></h4>
+                    <h4>Pases</h4>
+                    <br><br>
+                    <button id="redirectButton">Confirmar Asistencia</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="gracias">
+        <h2>Gracias</h2>
+        <div class="content">
+            <p>Gracias a todos por ser parte de nuestras vidas y acompañarnos en este viaje tan importante. Apreciamos
+                su apoyo y amor.</p>
+        </div>
+    </section>
+
+    <section id="vestimenta" class="dress-code">
+        <h2>Vestimenta</h2>
+        <div class="content">
+            <p>El código de vestimenta para el evento es formal. Queremos que todos se sientan cómodos y elegantes para
+                esta ocasión especial.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2024 Aaron & Celeste. Todos los derechos reservados.
+    </footer>
+
+</body>
+<script>
+    // <!-- https://tu-pagina.com/?no=Aura%20Marina&in=3 -->
+    // Función para obtener los parámetros de la URL
+    function obtenerParametrosURL() {
+        const parametros = new URLSearchParams(window.location.search);
+        const nombre = parametros.get('no');
+        const invitados = parametros.get('in');
+        return { nombre, invitados };
+    }
+
+    // Obtener los datos de la URL
+    const datos = obtenerParametrosURL();
+
+    const nombre = datos.nombre || 'Invitado';
+    const invitados = datos.invitados || '0'; // Sin "+" para el número de invitados
+    // Mostrar los datos en el HTML
+    document.getElementById('nombre').textContent = nombre;
+    document.getElementById('invitados').textContent = invitados;
+    // const invitadosConSigno = datos.invitados ? `+${datos.invitados}` : '0';
+    // document.getElementById('invitados').textContent = invitadosConSigno;
+
+
+    const urlBase = 'https://docs.google.com/forms/d/e/1FAIpQLSclMQcdg4bDqwknb6VsrLAWiijoI8rSzAEvLaQgJPs7AP1hmQ/formResponse';
+    const urlParams = new URLSearchParams({
+        'usp': 'pp_url',
+        'entry.18154426': nombre,
+        'entry.1373878156': invitados
+    });
+
+    const urlFinal = `${urlBase}?${urlParams.toString()}`;
+
+    // Manejar el clic del botón para redirigir
+    document.getElementById('redirectButton').addEventListener('click', function () {
+        //   window.location.href = urlFinal;
+        window.open(urlFinal, '_blank'); // Abrir en una nueva ventana o pestaña
+    });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</html>
