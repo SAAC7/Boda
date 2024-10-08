@@ -1,40 +1,43 @@
-// // <!-- https://tu-pagina.com/?no=Aura%20Marina&in=3 -->
-// // Función para obtener los parámetros de la URL
-// function obtenerParametrosURL() {
-//   const parametros = new URLSearchParams(window.location.search);
-//   const nombre = parametros.get("no");
-//   const invitados = parametros.get("in");
-//   return { nombre, invitados };
-// }
+// <!-- https://tu-pagina.com/?no=Aura%20Marina&in=3 -->
+// Función para obtener los parámetros de la URL
+function obtenerParametrosURL() {
+  const parametros = new URLSearchParams(window.location.search);
+  const nombre = parametros.get("no");
+  const invitados = parametros.get("in");
+  return { nombre, invitados };
+}
 
-// // Obtener los datos de la URL
-// const datos = obtenerParametrosURL();
+// Obtener los datos de la URL
+const datos = obtenerParametrosURL();
 
-// const nombre = datos.nombre || "Invitado";
-// const invitados = datos.invitados || "0"; // Sin "+" para el número de invitados
-// // Mostrar los datos en el HTML
+const nombre = datos.nombre || "Invitado";
+const invitados = datos.invitados || "0"; // Sin "+" para el número de invitados
+// Mostrar los datos en el HTML
 // document.getElementById("nombre").textContent = nombre;
-// document.getElementById("invitados").textContent = invitados;
-// // const invitadosConSigno = datos.invitados ? `+${datos.invitados}` : '0';
-// // document.getElementById('invitados').textContent = invitadosConSigno;
+document.getElementById("invitados").textContent = invitados;
+// const invitadosConSigno = datos.invitados ? `+${datos.invitados}` : '0';
+// document.getElementById('invitados').textContent = invitadosConSigno;
 
-// const urlBase =
-//   "https://docs.google.com/forms/d/e/1FAIpQLSclMQcdg4bDqwknb6VsrLAWiijoI8rSzAEvLaQgJPs7AP1hmQ/formResponse";
-// const urlParams = new URLSearchParams({
-//   usp: "pp_url",
-//   "entry.18154426": nombre,
-//   "entry.1373878156": invitados,
-// });
+const urlBase =
+  "https://docs.google.com/forms/d/e/1FAIpQLSclMQcdg4bDqwknb6VsrLAWiijoI8rSzAEvLaQgJPs7AP1hmQ/formResponse";
+const urlParams = new URLSearchParams({
+  usp: "pp_url",
+  "entry.18154426": nombre,
+  "entry.1373878156": invitados,
+});
 
-// const urlFinal = `${urlBase}?${urlParams.toString()}`;
+const urlFinal = `${urlBase}?${urlParams.toString()}`;
 
-// // Manejar el clic del botón para redirigir
-// document
-//   .getElementById("redirectButton")
-//   .addEventListener("click", function () {
-//     //   window.location.href = urlFinal;
-//     window.open(urlFinal, "_blank"); // Abrir en una nueva ventana o pestaña
-//   });
+// Manejar el clic del botón para redirigir
+document
+  .getElementById("redirectButton")
+  .addEventListener("click", function () {
+    //   window.location.href = urlFinal;
+    window.open(urlFinal, "_blank"); // Abrir en una nueva ventana o pestaña
+  //  console.log("ENVIANDO");
+   this.disabled=true;
+   this.innerText="Se ha Confirmado"
+  });
 
 let fecha_final = new Date("10/26/2024 17:00:00");
 let msFecha_final = fecha_final.getTime();
