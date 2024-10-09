@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alex+Brush&family=Ballet:opsz@16..72&family=Bebas+Neue&family=Fredericka+the+Great&family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alex+Brush&family=Ballet:opsz@16..72&family=Bebas+Neue&family=Fredericka+the+Great&family=Rye&display=swap&family=Great+Vibes&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -71,9 +71,17 @@ section{
   font-style: normal;
 }
 
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
            
 .back-p {
-  background-color: #CCA01D;
+  /* background-color: #A9D6E5; */
+  /* background: radial-gradient(circle, #FFEA83 50%, #FFBA00 100%); */
+  background: radial-gradient(circle, #A9D6E5 50%, #2A6F97 100%);
 }
 .h-1{
   font-size: 4rem;
