@@ -2,8 +2,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
-    color: #333;
+    background-color: #D2E0FB;
+    color: #080808;
     font-size: 20px;
 }
 section{
@@ -16,7 +16,9 @@ section{
 }
 
 .b-color{
-  background-color: #423d3d;
+  /* background-color: #423d3d; */
+  background-color: #D2E0FB;
+  /* https://colorhunt.co/palette/d2e0fbf9f3ccd7e5ca8eaccd */
 }
 .h-35 {
   height: 35% !important;
@@ -71,22 +73,24 @@ section{
 
            
 .back-p {
-  background-color: #d5d5d5;
+  background-color: #F9F3CC;
 }
 .h-1{
   font-size: 4rem;
 }
 
-/* Todas las imágenes serán responsivas */
+/* Todas las imágenes serán responsivas */bebb56
 img {
     max-width: 100%;
     height: auto;
+    object-fit: contain;
 }
 
 /* Estilos para imágenes verticales */
 .vertical {
-    max-height: 70vh; /* Limitar la altura de las imágenes verticales al 70% del viewport */
-    width: auto; /* Mantener el ancho automático para conservar proporciones */
+  min-width: 300px;
+  max-height: 70vh; /* Limitar la altura de las imágenes verticales al 70% del viewport */
+  width: auto; /* Mantener el ancho automático para conservar proporciones */
 }
 .qr {
   max-height: 30vh; /* Limitar la altura de las imágenes verticales al 70% del viewport */
